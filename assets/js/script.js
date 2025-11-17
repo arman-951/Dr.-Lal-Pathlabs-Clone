@@ -3,23 +3,23 @@
 const searchInput = document.querySelector(".search-input");
 const dropdownMenu = document.querySelector(".dropdown-menu");
 const dropIcon = document.querySelector(".ri-arrow-down-s-line");
-const menuContent=document.querySelector(".menu-content")
+const menuContent = document.querySelector(".menu-content")
 
 // Open dropdown menu on click of search input
 searchInput.addEventListener("click", function (event) {
-    event.stopPropagation();  // Prevent click event from propagating to the document
-    dropdownMenu.classList.toggle("show");
-    // Toggle the icon class to change the dropdown arrow
-     dropIcon.classList.toggle("ri-arrow-up-s-line");
+  event.stopPropagation();  // Prevent click event from propagating to the document
+  dropdownMenu.classList.toggle("show");
+  // Toggle the icon class to change the dropdown arrow
+  dropIcon.classList.toggle("ri-arrow-up-s-line");
 });
 
 // Close the menu if clicked outside
 document.addEventListener("click", function (event) {
-    // Check if the click is outside the search input or the dropdown menu
-    if (!searchInput.contains(event.target) && !dropdownMenu.contains(event.target)) {
-        dropdownMenu.classList.remove("show");
-        dropIcon.classList.remove("ri-arrow-up-s-line"); // Reset the icon
-    }
+  // Check if the click is outside the search input or the dropdown menu
+  if (!searchInput.contains(event.target) && !dropdownMenu.contains(event.target)) {
+    dropdownMenu.classList.remove("show");
+    dropIcon.classList.remove("ri-arrow-up-s-line"); // Reset the icon
+  }
 });
 
 // Fetch the data from the local JSON file
@@ -35,17 +35,17 @@ fetch('/assets/json/cities.json')
       listItem.textContent = curElem;  // Assuming curElem has a 'name' property
       // Append the list item to the menu content list
       menuContent.appendChild(listItem);
-      listItem.style.listStyle="none";
+      listItem.style.listStyle = "none";
     });
   })
   .catch(error => console.error('Error:', error));
 
 
-  // ---------------guest user------------------
-const guestUser=document.querySelector(".guest-user")
+// ---------------guest user------------------
+const guestUser = document.querySelector(".guest-user")
 // console.log(guestUser)
 
-guestUser.addEventListener("click",(e)=>{
+guestUser.addEventListener("click", (e) => {
   e.preventDefault();
   console.log(dropdownMenu.classList.toggle(".show"))
   dropdownMenu.classList.toggle("show");
@@ -79,10 +79,10 @@ document.addEventListener("click", function (event) {
 
 
 // -------------------for guest user------------
-const openGuestMenu=document.querySelector(".guest-menu");
-const clickGuestUser=document.querySelector(".guest-user");
+const openGuestMenu = document.querySelector(".guest-menu");
+const clickGuestUser = document.querySelector(".guest-user");
 
-clickGuestUser.addEventListener("click",(e)=>{
+clickGuestUser.addEventListener("click", (e) => {
   e.preventDefault()
   openGuestMenu.classList.toggle("show");
   // dropIcon.classList.toggle("ri-arrow-up-s-line");
@@ -106,23 +106,23 @@ document.addEventListener("click", function (event) {
 const searchMobDiv = document.querySelector(".search-m-div");
 const searchDropdown = document.querySelector(".search-dropdown");
 const changeIcon = document.querySelector(".ri-arrow-down-s-line");
-const searchMenuContent=document.querySelector(".search-menu-content")
+const searchMenuContent = document.querySelector(".search-menu-content")
 
 // Open dropdown menu on click of search input
 searchMobDiv.addEventListener("click", function (event) {
-    event.stopPropagation();  // Prevent click event from propagating to the document
-    searchDropdown.classList.toggle("show");
-    // Toggle the icon class to change the dropdown arrow
-    changeIcon.classList.toggle("ri-arrow-up-s-line");
+  event.stopPropagation();  // Prevent click event from propagating to the document
+  searchDropdown.classList.toggle("show");
+  // Toggle the icon class to change the dropdown arrow
+  changeIcon.classList.toggle("ri-arrow-up-s-line");
 });
 
 // Close the menu if clicked outside
 document.addEventListener("click", function (event) {
-    // Check if the click is outside the search input or the dropdown menu
-    if (!searchMobDiv.contains(event.target) && !searchDropdown.contains(event.target)) {
-        searchDropdown.classList.remove("show");
-        changeIcon.classList.remove("ri-arrow-up-s-line"); // Reset the icon
-    }
+  // Check if the click is outside the search input or the dropdown menu
+  if (!searchMobDiv.contains(event.target) && !searchDropdown.contains(event.target)) {
+    searchDropdown.classList.remove("show");
+    changeIcon.classList.remove("ri-arrow-up-s-line"); // Reset the icon
+  }
 });
 
 // Fetch the data from the local JSON file
@@ -138,7 +138,7 @@ fetch('/navbar/json/cities.json')
       listItem.textContent = curElem;  // Assuming curElem has a 'name' property
       // Append the list item to the menu content list
       searchMenuContent.appendChild(listItem);
-      listItem.style.listStyle="none";
+      listItem.style.listStyle = "none";
     });
   })
   .catch(error => console.error('Error:', error));
@@ -147,18 +147,18 @@ fetch('/navbar/json/cities.json')
 
 
 // --------------hero slider--------------
-  /*=============== SWIPER slider ===============*/
+/*=============== SWIPER slider ===============*/
 const sliderSwiper = new Swiper(".hero-slider", {
-  autoplay:{
-      delay:2000,
-      disableOnInteraction:false,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
   },
   loop: true,
 
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
-    
+
   },
 
   // navigation: {
@@ -170,7 +170,7 @@ const sliderSwiper = new Swiper(".hero-slider", {
 
 // --------------health slider swiper------
 var healthSwiper = new Swiper(".health__container", {
-  loop:true,
+  loop: true,
   spaceBetween: 20,
   autoplay: {
     delay: 2000,
@@ -182,14 +182,14 @@ var healthSwiper = new Swiper(".health__container", {
   },
   breakpoints: {
     1200: {
-        slidesPerView: 3,
-        // spaceBetween: 56,
+      slidesPerView: 3,
+      // spaceBetween: 56,
     },
     768: {
-        slidesPerView: 2,
-        // spaceBetween: 56,
+      slidesPerView: 2,
+      // spaceBetween: 56,
     },
-},
+  },
 });
 
 
@@ -232,7 +232,7 @@ var healthConcern = new Swiper(".health-concern", {
 
 // --------------promotion slider swiper------
 var promotionSwiper = new Swiper(".promotion-container", {
-  loop:true,
+  loop: true,
   spaceBetween: 20,
   autoplay: {
     delay: 2000,
@@ -244,14 +244,14 @@ var promotionSwiper = new Swiper(".promotion-container", {
   },
   breakpoints: {
     1200: {
-        slidesPerView: 3,
-        // spaceBetween: 56,
+      slidesPerView: 3,
+      // spaceBetween: 56,
     },
     768: {
-        slidesPerView: 2,
-        // spaceBetween: 56,
+      slidesPerView: 2,
+      // spaceBetween: 56,
     },
-},
+  },
 });
 
 
@@ -259,7 +259,7 @@ var promotionSwiper = new Swiper(".promotion-container", {
 
 // --------------blogs slider swiper------
 var blogSwiper = new Swiper(".blogs-container", {
-  loop:true,
+  loop: true,
   spaceBetween: 20,
   autoplay: {
     delay: 2000,
@@ -271,14 +271,14 @@ var blogSwiper = new Swiper(".blogs-container", {
   },
   breakpoints: {
     1200: {
-        slidesPerView: 3,
-        // spaceBetween: 56,
+      slidesPerView: 3,
+      // spaceBetween: 56,
     },
     768: {
-        slidesPerView: 2,
-        // spaceBetween: 56,
+      slidesPerView: 2,
+      // spaceBetween: 56,
     },
-},
+  },
 });
 
 
@@ -287,7 +287,7 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+  acc[i].addEventListener("click", function () {
     // Get the currently open panel
     var currentPanel = document.querySelector(".accordion.active");
     var currentContent = currentPanel ? currentPanel.nextElementSibling : null;
@@ -311,7 +311,7 @@ for (i = 0; i < acc.length; i++) {
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
-      
+
       // Change the arrow to down when panel is closed
       var arrow = this.querySelector(".arrow-icon");
       if (arrow) {
@@ -350,7 +350,7 @@ if (openedacc.length > 0) {
 }
 
 for (i = 0; i < openedacc.length; i++) {
-  openedacc[i].addEventListener("click", function() {
+  openedacc[i].addEventListener("click", function () {
     // Get the currently open panel
     var currentPanel = document.querySelector(".opened-accordion.active");
     var currentContent = currentPanel ? currentPanel.nextElementSibling : null;
@@ -374,7 +374,7 @@ for (i = 0; i < openedacc.length; i++) {
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
-      
+
       // Change the arrow to down when panel is closed
       var arrow = this.querySelector(".opened-arrow-icon");
       if (arrow) {
